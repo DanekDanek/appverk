@@ -1,1 +1,52 @@
 /* You can add global styles to this file, and also import other style files */
+
+:root {
+  // Color palette
+  --palette-blue: #166ec7;
+  --palette-white: #f0f0f0;
+  --palette-black: #363636;
+
+  // Semantic colors
+  --bg-brand: var(--palette-blue);
+  --bg-light: var(var(--palette-white));
+  --text-light: var(--palette-white);
+  --text-dark: var(--palette-black);
+}
+
+html,
+body {
+  font-size: 16px;
+  height: 100%;
+  margin: 0;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+.bg-brand {
+  background-color: var(--bg-brand);
+}
+
+.bg-light {
+  background-color: var(--bg-light);
+}
+
+.text-light {
+  color: var(--text-light);
+}
+
+.text-dark {
+  color: var(--text-dark);
+}
+
+.shadow {
+  box-shadow: 0 2px 8px rgba($color: #000000, $alpha: 0.3);
+}
+
+.rounded {
+  border-radius: 4px;
+}
