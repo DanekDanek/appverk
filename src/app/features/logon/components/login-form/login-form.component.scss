@@ -1,0 +1,26 @@
+:host {
+  display: flex;
+  justify-content: center;
+}
+
+.form {
+  &_container {
+    width: 100%;
+    max-width: 500px;
+    padding: 2rem;
+  }
+}
+
+.submit-btn {
+  border: none;
+  padding: 0.4rem 1.2rem;
+  cursor: pointer;
+  &:hover {
+    transition: opacity;
+    opacity: 0.8;
+  }
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}

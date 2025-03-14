@@ -1,0 +1,21 @@
+<div class="input_container">
+  <label [for]="inputId" class="input_label">
+    {{ label() }}
+    @if (isRequired()) {
+      <span class="text-error">*</span>
+    }
+  </label>
+  <input
+    [id]="inputId"
+    [type]="type()"
+    class="input_field rounded"
+    [ngClass]="{ 'border-error': hasError() }"
+    [formControl]="control()"
+  />
+  @if (hasError() && isMissingValue()) {
+    <p class="input_error text-error">Field is required</p>
+  }
+  @if (hasError() && incorrectValue()) {
+    <p class="input_error text-error">Provide correct value</p>
+  }
+</div>
