@@ -1,7 +1,8 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, output } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { InputComponent } from '@shared/input.component';
-import { myEmailValidator } from 'app/shared/utils/my-email.validator';
+import { myEmailValidator } from '@shared/utils/my-email.validator';
+import { LoginData } from '../../interfaces/login.interface';
 
 @Component({
   selector: 'app-login-form',
@@ -12,12 +13,15 @@ import { myEmailValidator } from 'app/shared/utils/my-email.validator';
 export class LoginFormComponent {
   private fb = inject(FormBuilder);
 
+  protected login = output<LoginData>();
+
   protected form = this.fb.group({
-    email: this.fb.control('', [Validators.required, myEmailValidator()]),
-    password: this.fb.control('', Validators.required),
+    email: this.fb.control(null, [Validators.required, myEmailValidator()]),
+    password: this.fb.control(null, Validators.required),
   });
 
   onLogin() {
-    console.log(this.form.getRawValue());
+    const loginData = this.form.getRawValue() as unknown as LoginData;
+    this.login.emit(loginData);
   }
 }
