@@ -12,8 +12,7 @@ import { AuthService } from '@shared/auth.service';
 export class LogonPageComponent {
   private authService = inject(AuthService);
 
-  onLogin(event: LoginData) {
-    console.log(event);
-    this.authService.login();
+  onLogin(data: LoginData) {
+    this.authService.login(data);
   }
 }

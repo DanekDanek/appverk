@@ -1,0 +1,30 @@
+<div class="container shadow rounded">
+  <div class="detail">
+    <h2 class="detail_key">Email</h2>
+    <p class="detail_value">{{ user()?.loginData?.email }}</p>
+  </div>
+  <div class="detail">
+    <h2 class="detail_key">Name</h2>
+    <p class="detail_value">{{ user()?.userDetails?.name }}</p>
+  </div>
+  <div class="detail">
+    <h2 class="detail_key">Surname</h2>
+    <p class="detail_value">{{ user()?.userDetails?.surname }}</p>
+  </div>
+  <div class="detail">
+    <h2 class="detail_key">City</h2>
+    <p class="detail_value">{{ user()?.userDetails?.city }}</p>
+  </div>
+  <div class="detail">
+    <h2 class="detail_key">Postal code</h2>
+    <p class="detail_value">{{ user()?.userDetails?.['postal-code'] }}</p>
+  </div>
+  <div class="detail">
+    <h2 class="detail_key">Street</h2>
+    <p class="detail_value">{{ user()?.userDetails?.street }}</p>
+  </div>
+  <div class="detail">
+    <h2 class="detail_key">Country</h2>
+    <p class="detail_value">{{ user()?.userDetails?.country }}</p>
+  </div>
+</div>
